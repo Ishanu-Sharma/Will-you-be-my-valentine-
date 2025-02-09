@@ -5,54 +5,45 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #f9e3e3; /* Light pink background */
   font-family: 'Arial', sans-serif;
-  flex-direction: column;
-  position: relative; /* Ensure hearts appear in the background */
-  overflow: hidden; /* Prevent scrolling when hearts animate */
+  overflow: hidden;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffdde1);
+  background-size: 400% 400%;
+  animation: gradientBG 8s ease infinite;
 }
 
-/* Container holding the content */
+/* Container */
 .container {
   text-align: center;
-  z-index: 1; /* Keeps the buttons and other content above the hearts */
+  z-index: 1;
 }
 
-/* Title styling */
+/* Title */
 h1 {
   font-size: 2.5em;
-  color: #d32f2f; /* Red color for the heading */
+  color: #d32f2f;
 }
 
-/* Button container */
-.buttons {
-  margin-top: 20px;
-}
-
-/* Yes button styling */
-.yes-button {
+/* Buttons */
+.yes-button, .no-button {
   font-size: 1.5em;
   padding: 10px 20px;
-  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.yes-button {
   background-color: #4caf50;
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
-/* No button styling */
 .no-button {
-  font-size: 1.5em;
-  padding: 10px 20px;
   background-color: #f44336;
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
-/* GIF styling */
+/* GIF */
 .gif_container img {
   max-width: 100%;
   height: auto;
@@ -60,49 +51,55 @@ h1 {
   margin-top: 20px;
 }
 
-/* Floating love symbol styling */
+/* Floating Hearts */
 .love {
   position: absolute;
-  font-size: 30px; /* Adjust the size of the love symbol */
+  font-size: 30px;
   animation: floatLove 5s linear infinite;
   opacity: 0.8;
-  z-index: 0;
 }
 
-/* Floating animation for the love symbol (❤️) */
 @keyframes floatLove {
-  0% {
-    transform: translateY(100vh) scale(1);
-  }
-  50% {
-    transform: translateY(-50vh) scale(1.2);
-  }
-  100% {
-    transform: translateY(-100vh) scale(1);
-  }
+  0% { transform: translateY(100vh) scale(1); }
+  100% { transform: translateY(-100vh) scale(1.2); }
 }
 
-/* Watermark styling */
+/* Watermark */
 .watermark {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    font-size: 1.5em;
-    color: rgba(0, 0, 0, 0.3);
-    font-weight: bold;
-    z-index: -1;
-    pointer-events: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  color: rgba(0, 0, 0, 0.3);
 }
 
-/* Responsiveness for smaller screens */
-@media (max-width: 768px) {
-  .love {
-    font-size: 25px;
-  }
+/* Love Letter Popup */
+.love-letter {
+  position: fixed;
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px pink;
+  animation: letterPop 0.5s ease-in-out;
+  display: none;
 }
 
-@media (max-width: 480px) {
-  .love {
-    font-size: 20px;
-  }
+@keyframes letterPop {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Floating messages */
+.floating-message {
+  position: absolute;
+  font-size: 1.5em;
+  color: red;
+  animation: floatUp 3s ease-in-out;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-200px); opacity: 0; }
 }
