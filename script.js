@@ -2,12 +2,12 @@
 function createFloatingLoves() {
     const body = document.querySelector('body');
 
-    for (let i = 0; i < 10; i++) {  // Create 10 "❤" symbols at random positions
+    for (let i = 0; i < 5; i++) {  // Create 5 "❤" symbols at random positions
         const love = document.createElement('div');
         love.classList.add('love');
         love.textContent = '❤';
-        love.style.left = ${Math.random() * 100}vw; // Random horizontal position
-        love.style.animationDuration = ${Math.random() * 4 + 4}s; // Random animation duration
+        love.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+        love.style.animationDuration = `${Math.random() * 4 + 4}s`; // Random animation duration
 
         body.appendChild(love);
 
@@ -44,7 +44,7 @@ function handleNoClick() {
     messageIndex = (messageIndex + 1) % messages.length;
 
     const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
-    yesButton.style.fontSize = ${currentSize * 1.5}px; // Increase YES button size
+    yesButton.style.fontSize = `${currentSize * 1.5}px`; // Increase YES button size
 }
 
 // Function to handle the "Yes" button click (redirect to another page)
@@ -57,7 +57,7 @@ function createFloatingMessage(text) {
     const message = document.createElement("div");
     message.classList.add("floating-message");
     message.textContent = text;
-    message.style.left = ${Math.random() * 80}vw;
+    message.style.left = `${Math.random() * 80}vw`;
     document.body.appendChild(message);
     setTimeout(() => message.remove(), 3000);
 }
@@ -67,9 +67,9 @@ function createConfetti() {
     for (let i = 0; i < 30; i++) {
         const confetti = document.createElement("div");
         confetti.classList.add("confetti");
-        confetti.style.left = ${Math.random() * 100}vw;
-        confetti.style.backgroundColor = hsl(${Math.random() * 360}, 100%, 70%);
-        confetti.style.animationDuration = ${Math.random() * 3 + 2}s;
+        confetti.style.left = `${Math.random() * 100}vw`;
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+        confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
         document.body.appendChild(confetti);
         setTimeout(() => confetti.remove(), 5000);
     }
