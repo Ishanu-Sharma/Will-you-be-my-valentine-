@@ -50,12 +50,20 @@ h1 {
   color: white;
 }
 
-/* GIF */
+/* GIF container styling */
+.gif_container {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+/* Add shadow to the GIF image */
 .gif_container img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  margin-top: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Shadow added directly to the GIF image */
 }
 
 /* Floating romantic words */
@@ -110,15 +118,6 @@ h1 {
   font-weight: bold;
   text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
   animation: glowText 1.5s infinite alternate;
-}
-
-/* GIF container */
-.gif_container img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0px 0px 20px rgba(255, 182, 193, 0.8);
 }
 
 /* Floating love hearts */
